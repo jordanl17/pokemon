@@ -16,7 +16,7 @@ On page load a spinner will show with a darkened background whilst the table is 
 
 Once the table has loaded all pokemon will be displayed in ascending order as given by their Names. To invert the ordering, click on 'Name' column header. To order by ascending on any other column click on the column header. To invert this ordering, click again.
 
-To view details on a pokemon's next evolutions, click on the action button. A popup modal will appear allowing for detailed interrogation of the next evolutions.
+To view details on a pokemon's previous or next evolutions, click on the action button. A popup modal will appear allowing for detailed interrogation of the evolutions.
 
 # Structure
 
