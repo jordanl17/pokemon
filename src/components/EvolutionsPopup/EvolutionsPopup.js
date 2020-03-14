@@ -20,14 +20,14 @@ const EvolutionsPopup = ({ pokemon, evolutionType }) => {
   const { pokemons: allPokemons } = useContext(PokemonListContext);
 
   const togglePopup = () => setOpen(prevOpen => !prevOpen);
-
+  const pokemonEvolutionNumbers = pokemon[evolutionType].map(({ num }) => num);
   /**
    * return only pokemons which are within the list
    * of this pokemons evolutions
    * @param {pokemon}
    */
   const findEvolutionsPokemons = ({ num }) =>
-    pokemon[evolutionType].map(({ num: nextNum }) => nextNum).includes(num);
+    pokemonEvolutionNumbers.includes(num);
 
   return (
     <React.Fragment>
