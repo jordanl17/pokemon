@@ -26,8 +26,9 @@ const renderer = props =>
 
 describe("TableRow", () => {
   it("should render the correct rows when displaying a non popup table", () => {
-    const { getByText } = renderer({ isPopup: true });
+    const { getByText, getByTestId } = renderer({ isPopup: true });
 
+    getByTestId("pokemon-img");
     getByText("test name");
     getByText("test num");
     getByText("test type");
