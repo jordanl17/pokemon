@@ -12,14 +12,18 @@ import { alignment } from "../../helpers/alignment";
 import pokemonPropTypes from "../../pokemonPropTypes";
 
 const NEXT_EVOLUTION = "next_evolution";
+const PREV_EVOLUTION = "prev_evolution";
 
 const renderCell = (pokemon, cellName) => {
   /**
    * if currently rendering the next evolution cell, and this pokemon has a next evolution value
    * - show the button
    */
-  if (cellName === NEXT_EVOLUTION && pokemon[NEXT_EVOLUTION]) {
-    return <EvolutionsPopup pokemon={pokemon} />;
+  if (
+    (cellName === NEXT_EVOLUTION && pokemon[NEXT_EVOLUTION]) ||
+    (cellName === PREV_EVOLUTION && pokemon[PREV_EVOLUTION])
+  ) {
+    return <EvolutionsPopup pokemon={pokemon} evolutionType={cellName} />;
   }
   if (Array.isArray(pokemon[cellName])) {
     // if cell data is an array split each el onto a new line

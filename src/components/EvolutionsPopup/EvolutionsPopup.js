@@ -1,17 +1,21 @@
 import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
 
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 
-import HistoryIcon from "@material-ui/icons/History";
+import ForwardIcon from "@material-ui/icons/Forward";
+import ReplayIcon from "@material-ui/icons/Replay";
 
 import PokemonTable from "../PokemonTable";
 import PokemonListContext from "../PokemonListContext";
 import pokemonPropTypes from "../../pokemonPropTypes";
 
-const EvolutionsPopup = ({ pokemon }) => {
+const PREV_EVOLUTION = "prev_evolution";
+
+const EvolutionsPopup = ({ pokemon, evolutionType }) => {
   const [open, setOpen] = useState(false);
   const { pokemons: allPokemons } = useContext(PokemonListContext);
 
@@ -19,11 +23,11 @@ const EvolutionsPopup = ({ pokemon }) => {
 
   /**
    * return only pokemons which are within the list
-   * of this pokemons next evolutions
+   * of this pokemons evolutions
    * @param {pokemon}
    */
-  const findNextEvolutionsPokemons = ({ num }) =>
-    pokemon.next_evolution.map(({ num: nextNum }) => nextNum).includes(num);
+  const findEvolutionsPokemons = ({ num }) =>
+    pokemon[evolutionType].map(({ num: nextNum }) => nextNum).includes(num);
 
   return (
     <React.Fragment>
@@ -32,16 +36,16 @@ const EvolutionsPopup = ({ pokemon }) => {
         onClick={togglePopup}
         variant="contained"
       >
-        <HistoryIcon />
+        {evolutionType === PREV_EVOLUTION ? <ReplayIcon /> : <ForwardIcon />}
       </Button>
       <Dialog open={open} onClose={togglePopup} maxWidth="md">
-        <DialogTitle id="Next evolutions list">
-          Next evolutions for {pokemon.name}
+        <DialogTitle id="Evolutions list">
+          Evolutions for {pokemon.name}
         </DialogTitle>
         <DialogContent>
           <PokemonTable
             isPopup={true}
-            pokemons={allPokemons.filter(findNextEvolutionsPokemons)}
+            pokemons={allPokemons.filter(findEvolutionsPokemons)}
           />
         </DialogContent>
       </Dialog>
@@ -54,7 +58,9 @@ EvolutionsPopup.defaultProps = {
 };
 
 EvolutionsPopup.propTypes = {
-  pokemon: pokemonPropTypes
+  pokemon: pokemonPropTypes,
+  evolutionType: PropTypes.oneOf(["prev_evolution", "next_evolution"])
+    .isRequired
 };
 
 export default EvolutionsPopup;

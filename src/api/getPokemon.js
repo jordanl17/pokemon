@@ -10,6 +10,7 @@ const pokemonTransform = ({
   weight,
   weaknesses,
   next_evolution,
+  prev_evolution,
   img
 }) => ({
   id,
@@ -20,6 +21,7 @@ const pokemonTransform = ({
   weight,
   weaknesses,
   next_evolution,
+  prev_evolution,
   img
 });
 

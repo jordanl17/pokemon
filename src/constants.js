@@ -17,7 +17,8 @@ export const TABLE_COLS = [
   { displayName: "Height", name: "height", popupVisible: true },
   { displayName: "Weight", name: "weight", popupVisible: true },
   { displayName: "Weaknesses", name: "weaknesses", popupVisible: true },
-  { displayName: "Next Evolution", name: "next_evolution" }
+  { displayName: "Next Evolution", name: "next_evolution" },
+  { displayName: "Previous Evolution", name: "prev_evolution" }
 ];
 
 export const SORT_DIRECTION = {
