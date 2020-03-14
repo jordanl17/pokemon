@@ -1,0 +1,37 @@
+{
+  "name": "pokemon",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "@testing-library/react": "^10.0.0",
+    "concurrently": "^5.1.0",
+    "cypress": "^4.1.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "start:cy": "PORT=3001 npm start",
+    "test": "react-scripts test --coverage",
+    "cy:open": "concurrently \"npm run start:cy\" \"cypress open\"",
+    "cy:run": "concurrently \"npm run start:cy\" \"cypress run\"",
+    "eject": "react-scripts eject"
+  }
+}
