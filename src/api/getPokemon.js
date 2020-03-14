@@ -9,8 +9,19 @@ const pokemonTransform = ({
   height,
   weight,
   weaknesses,
-  next_evolution
-}) => ({ id, name, num, type, height, weight, weaknesses, next_evolution });
+  next_evolution,
+  img
+}) => ({
+  id,
+  name,
+  num,
+  type,
+  height,
+  weight,
+  weaknesses,
+  next_evolution,
+  img
+});
 
 const getPokemon = () =>
   fetch(URLS.getPokemon, {

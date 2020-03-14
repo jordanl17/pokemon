@@ -34,7 +34,7 @@ const EvolutionsPopup = ({ pokemon }) => {
       >
         <HistoryIcon />
       </Button>
-      <Dialog open={open} onClose={togglePopup}>
+      <Dialog open={open} onClose={togglePopup} maxWidth="md">
         <DialogTitle id="Next evolutions list">
           Next evolutions for {pokemon.name}
         </DialogTitle>

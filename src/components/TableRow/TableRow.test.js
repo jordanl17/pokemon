@@ -8,9 +8,11 @@ const defaultProps = {
   pokemon: {
     name: "test name",
     num: "test num",
-    type: "test type",
+    type: ["test type"],
     weight: "test weight",
-    height: "test height"
+    height: "test height",
+    weaknesses: ["test weakness"],
+    img: "test img"
   }
 };
 const renderer = props =>
@@ -21,6 +23,7 @@ const renderer = props =>
       </tbody>
     </table>
   );
+
 describe("TableRow", () => {
   it("should render the correct rows when displaying a non popup table", () => {
     const { getByText } = renderer({ isPopup: true });

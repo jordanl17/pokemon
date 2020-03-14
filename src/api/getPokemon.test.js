@@ -23,7 +23,8 @@ const mockedPokemons = [
     next_evolution: "test next_evolution 2"
   },
   {
-    id: "test id 3"
+    id: "test id 3",
+    img: "test img"
   }
 ];
 
@@ -72,7 +73,8 @@ describe("getPokemon", () => {
             num: undefined,
             type: undefined,
             weaknesses: undefined,
-            weight: undefined
+            weight: undefined,
+            img: "test img"
           },
           {
             height: "test height 1",
@@ -82,7 +84,8 @@ describe("getPokemon", () => {
             num: "test num 1",
             type: undefined,
             weaknesses: "test weaknesses 1",
-            weight: "test weight 1"
+            weight: "test weight 1",
+            img: undefined
           },
           {
             height: "test height 2",
@@ -92,7 +95,8 @@ describe("getPokemon", () => {
             num: "test num 2",
             type: undefined,
             weaknesses: "test weaknesses 2",
-            weight: "test weight 2"
+            weight: "test weight 2",
+            img: undefined
           }
         ]);
       });

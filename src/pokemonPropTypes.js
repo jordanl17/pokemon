@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 const pokemonPropTypes = PropTypes.shape({
+  img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   num: PropTypes.string.isRequired,
   type: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import MUITableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
+import Avatar from "@material-ui/core/Avatar";
 
 import EvolutionsPopup from "../EvolutionsPopup";
 
@@ -23,6 +24,10 @@ const renderCell = (pokemon, cellName) => {
   if (Array.isArray(pokemon[cellName])) {
     // if cell data is an array split each el onto a new line
     return pokemon[cellName].map(item => <div key={item}>{item}</div>);
+  }
+
+  if (cellName === "img") {
+    return <Avatar alt={pokemon.name} src={pokemon.img} />;
   }
   return pokemon[cellName];
 };

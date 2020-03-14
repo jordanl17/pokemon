@@ -8,7 +8,9 @@ export const SORTING = {
   array: "array"
 };
 
+// ordered as according to view ordering
 export const TABLE_COLS = [
+  { name: "img", popupVisible: true },
   { displayName: "Name", name: "name", popupVisible: true },
   { displayName: "Number", name: "num", popupVisible: true },
   { displayName: "Type", name: "type", popupVisible: true },

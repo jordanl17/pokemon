@@ -4,6 +4,7 @@ describe("columnFilter", () => {
   it("should return all columns when viewed not in a popup", () => {
     const result = columnFilter(false);
     expect(result).toEqual([
+      { name: "img", popupVisible: true },
       { displayName: "Name", name: "name", popupVisible: true },
       { displayName: "Number", name: "num", popupVisible: true },
       { displayName: "Type", name: "type", popupVisible: true },
@@ -17,6 +18,7 @@ describe("columnFilter", () => {
   it("should return only popup columns when viewed in a popup", () => {
     const result = columnFilter(true);
     expect(result).toEqual([
+      { name: "img", popupVisible: true },
       { displayName: "Name", name: "name", popupVisible: true },
       { displayName: "Number", name: "num", popupVisible: true },
       { displayName: "Type", name: "type", popupVisible: true },
